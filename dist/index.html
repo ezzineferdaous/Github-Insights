@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+
+    <title>Document</title>
+</head>
+
+
+<body class="flex h-screen"><!--hight du page  -->
+    <aside class="block h-screen fixed w-1/5 bg-white p-8 rounded-lg">
+        
+        <!-- flag -->
+        <div dir="rtl">
+          
+            <img id="flagImage" class=" rounded-3xl h-5 w-10">    
+        </div>
+
+    
+       <!-- profile -->
+        <div dir="ltr">
+            
+            <img id="profile" src="https://avatars.githubusercontent.com/u/156105073?s=400&u=4390f24a2296a05adeb4e8fd262d72bb062fa337&v=4" alt="" class=" rounded-full ">
+            <span class="text-lg"></span>
+            
+            
+        </div>
+        <!-- usernam -->
+        <h1 class="text-black text-center font-bold w-30" id="username"></h1>
+        <!-- bio -->
+        <p class="text-black text-center font-normal mt-3" id="bio"></p>
+         
+        <div class="card border-gray-400 p-6 rounded-lg mt-[40px]">
+             <!--social  -->
+             
+              Followers: <span id="follower-count"></span>
+              Following: <span id="following-count"></span>
+              Public Repos: <span id="repo-count"></span>
+              
+            
+             
+           
+            <div class="flex">
+                <!-- linkdin -->
+                <svg enable-background="new 0 0 32 32" height="20px" version="1.0" viewBox="0 0 32 32" width="20px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g>
+                        <path d="M32,30c0,1.104-0.896,2-2,2H2c-1.104,0-2-0.896-2-2V2c0-1.104,0.896-2,2-2h28c1.104,0,2,0.896,2,2V30z" fill="#007BB5"/>
+                        <g>
+                            <rect fill="#FFFFFF" height="14" width="4" x="7" y="11"/>
+                            <path d="M20.499,11c-2.791,0-3.271,1.018-3.499,2v-2h-4v14h4v-8c0-1.297,0.703-2,2-2c1.266,0,2,0.688,2,2v8h4v-7C25,14,24.479,11,20.499,11z" fill="#FFFFFF"/>
+                            <circle cx="9" cy="8" fill="#FFFFFF" r="2"/>
+                        </g>
+                    </g>
+                </svg>
+               </div>
+                <a id="linkedin" href="#" class="text-blue-500 flex items-center hover:underline">
+                </a>
+                
+            </div>
+            
+        </div>
+         <!-- member year -->
+         <div class=" card border-gray-400 p-6 rounded-lg mt-[40px] ">
+          <!-- HTML for member years -->
+          <h6 id="member-years"></h6>
+    
+         </div>
+        
+
+    
+
+
+  
+
+    </aside>
+
+
+    <main class="block justify-center   w-1/5">
+   
+     <header class=" z-20  items-center bg-white -200 h-14   ml-8"> <!-- Flex principal --> 
+        <!-- github -->
+        <div class=" git flex items-center justify-start pl-4 "> 
+            <svg height="35" aria-hidden="true" viewBox="0 0 16 16"  version="1.1" width="35" data-view-component="true" class=" mt-3 octicon octicon-mark-github v-align-middle color-fg-default">
+              <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+            </svg>
+
+             <div class="flex  items-center justify-center w-3/4 pl-0 "> <!-- Flex pour centrer le texte -->
+            <span>Github Insights</span> 
+          </div>
+          </div>
+     
+         
+
+         
+
+          
+        </header>
+          <!-- search -->
+        <section class=" search  rounded-lg  ">
+
+          <input placeholder="&nbsp;&nbsp;&nbsp;&nbsp;Search" class="pl-10" id="search" data-search>
+          <div class="user-caeds" data-usr-cards-container></div>
+          <template data-user_template>
+            <div class="card">
+              <div class="header" data-header></div>
+              <div class="body" data-body></div>
+            </div>
+          </template>  
+         
+
+        </section>
+
+        
+    
+        <!-- Card Container Start -->
+    
+            
+        <section class="cards grid"  >
+       
+            
+          <section class="grid grid-cols-2 cards-container ">
+            <!-- <div id="repo-container" class="card p-1 bg-white relative">
+              <div class="flex">
+                <span id="repo-name" class="text-sm font-semibold"></span>
+                <h6 class="h6 rounded-md absolute right-0 mr-2" id="repo-type">&nbsp;Public&nbsp;</h6>
+              </div>
+              <p class="text-black" id="repo-description"></p>
+              <p class="text-gray-500" id="repo-language"></p>
+            </div> -->
+      
+      
+      
+      
+          </section>
+          
+          <button onclick="topFunction()" id="myBtn" title="Go to top"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 8 8"><path fill="currentColor" d="M3.97 0L1 3h2v5h2V3h2z"/></svg>
+          </button>
+           <!-- button -->
+           <div class= "fixed bottom-0  h-32 ">
+            <div class="flex h-20  ml-96 p-0 pl-9  ">
+               <button  class=" bg-white  rounded-md ml-48  w-20 ">
+                 profile
+                 Insights
+               </button>
+             </div>
+           </div>
+
+
+        
+        </section>
+        
+      
+          
+
+      </div>
+
+      <!-- page2 -->
+
+      <!-- profile_Name -->
+    <section class="flex justify-center-center rounded-lg  bg-white -200 h-16 mt-60 w-96 pb-9  ml-80">
+      <div dir="ltr">
+      <img id="profile_mini" src="https://avatars.githubusercontent.com/u/156105073?s=400&u=4390f24a2296a05adeb4e8fd262d72bb062fa337&v=4" alt="" class=" rounded-full  w-9 h-13 mt-1 bg-blue-700  ml-5 ">
+     
+      </div>
+
+      <div class="text  justify-center-center h-16  w-40  mt-5 ml-10 ">
+      <span class="text-lg">Vesir</span>
+      <span class="text-lg ml-8">Js Master</span>
+      <!-- flagimage -->
+      </div>
+      
+      <img id="Image" class=" rounded-3xl ml-10 mt-3 mb-3 h-5 w-10">
+    </section>
+    <!-- grid -->
+
+    <div id="section3" class="   grid grid-cols-2   justify-between   ml-80 w-96 items-center   mt-10 p-2 gap-9 " >
+
+      <div id="NbrRepositories" class="  border p-1 w-90 bg-white  border-gray-400  rounded-lg  relative">
+          6 Repos
+      </div>
+      <div id="NbrLanguage" class=" border w-52 p-1 bg-white border-gray-400  rounded-lg  relative">
+        Numbee  Used Language:  3
+      </div>
+
+
+      <div id="LineBar" class=" p-6 border  bg-white border-gray-400 mt-10 h-60   rounded-lg  relative">
+          
+      </div>
+      <div id="Piechart" class=" p-6 border  w-52 bg-white border-gray-400 mt-10 h-60   rounded-lg  relative">
+          Piechart
+
+
+      </div>
+
+
+
+  </div>
+       
+    
+    </main>
+    <script src="/src/index.js"></script>
+</body>
+</html>

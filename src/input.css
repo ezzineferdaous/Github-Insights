@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    padding: 20px;
+    background-color: #010D1D;
+}
+/* aside */
+
+:dir(ltr) #profile {
+    border: 2px solid #2F88FF;
+
+    border-radius: 50px;
+  width: 7vw;
+    margin-left: 49px;
+} 
+
+:dir(rlt) img{
+    border-radius: 5px;
+    width: 3vw;
+}
+aside .flex img{
+    margin-top: 9px;
+    border-radius: 4px;
+    width: 3vw;
+
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+
+}
+
+/* main */
+
+main{
+    margin-left: 20%;
+    background-color: #010D1D;
+    
+
+}
+.card{
+   
+    backdrop-filter: blur(10px);
+    background-color: rgba(95, 161, 249, 0.5); 
+}
+/* header */
+
+header{
+    width: 75vw;
+    height: 7vh;
+    border-radius: 10px;
+}
+
+h1{
+    margin-top: 9px;
+}
+
+.flex .col {
+    display: inline-flex;
+}
+
+#nbrY{
+    margin-top: 125px;
+}
+
+
+/* section */
+
+section{
+    margin-left: 200px;
+  }
+   input{
+    margin-top: 17px;
+    width: 550px;
+    border-radius: 10px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+   
+}
+
+.cards{
+    z-index:0;
+
+}
+.search{
+    z-index: 20;
+}
+
+/* page2 */
+
+/* profile_mini */
+:dir(ltr) #profile_mini {
+    border: 2px solid #2F88FF;
+
+    border-radius: 50px;
+  width: 4vw;
+    
+} 
+
+/* fleche move */
+
+#myBtn {
+    position: fixed;
+    bottom: 213px;
+    right: 197px;
+    top: 410px;
+    z-index: 99;
+    font-size: 18px;
+    border-radius: 50px;
+
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+  }
+  
+  
